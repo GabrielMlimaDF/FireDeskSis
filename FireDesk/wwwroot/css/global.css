@@ -1,0 +1,26 @@
+﻿body {
+    font-family: Roboto !important;
+    color: #141414 !important;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0px !important;
+}
+
+ul {
+    margin: 0px !important;
+    padding: 0px !important;
+    list-style: none !important;
+}
+
+img {
+    max-width: 100% !important;
+    display: block !important;
+}
+
+a {
+    text-decoration: none !important;
+   }
