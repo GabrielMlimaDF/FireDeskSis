@@ -1,4 +1,6 @@
 ﻿using System.Configuration;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace FireDesk.DAO
 {
