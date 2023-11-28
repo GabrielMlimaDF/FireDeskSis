@@ -1,34 +1,28 @@
 using FireDesk.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using FireDesk.DAO;
 using Microsoft.Extensions.Configuration;
 using System.Configuration;
 using System.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Dapper;
+using FireDesk.Repositorios.Interface;
 
 namespace FireDesk.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IConfiguration _configuration;
-
-        public HomeController(IConfiguration config)
+       private readonly ITicketsRepositorio _ticketsRepositorio;
+        public HomeController(ITicketsRepositorio ticketsRepositorio)
         {
-            _configuration = config;
+            _ticketsRepositorio = ticketsRepositorio;
         }
-
         [HttpGet]
         public async Task<IActionResult> GetAll()
 
         {
-            await using (var connection = new SqlConnection(_configuration.GetConnectionString("FireDesk")))
-            {
-                const string sql = "SELECT * FROM Tickets WHERE TicketID = 1";
-                var tickets = await connection.QueryAsync<TicketsModel>(sql);
-                return Ok(tickets);
-            }
+          List<TicketsModel> ticketsModels = await _ticketsRepositorio.GetAll();
+            return Ok(ticketsModels);
         }
 
         public IActionResult Index()

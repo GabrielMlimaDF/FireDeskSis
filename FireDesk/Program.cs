@@ -1,7 +1,12 @@
+using FireDesk.Repositorios;
+using FireDesk.Repositorios.Interface;
+using NuGet.Protocol.Core.Types;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ITicketsRepositorio, TicketsRepositorio>();
 
 var app = builder.Build();
 
