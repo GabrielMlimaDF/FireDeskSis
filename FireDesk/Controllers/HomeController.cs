@@ -12,7 +12,7 @@ namespace FireDesk.Controllers
 {
     public class HomeController : Controller
     {
-       private readonly ITicketsRepositorio _ticketsRepositorio;
+        private readonly ITicketsRepositorio _ticketsRepositorio;
         public HomeController(ITicketsRepositorio ticketsRepositorio)
         {
             _ticketsRepositorio = ticketsRepositorio;
@@ -21,9 +21,16 @@ namespace FireDesk.Controllers
         public async Task<IActionResult> GetAll()
 
         {
-          List<TicketsModel> ticketsModels = await _ticketsRepositorio.GetAll();
+            List<TicketsModel> ticketsModels = await _ticketsRepositorio.GetAll();
             return Ok(ticketsModels);
         }
+        public async Task<IActionResult> GetId(int id)
+
+        {
+            List<TicketsModel> ticketsModels = await _ticketsRepositorio.GetId(id);
+            return Ok(ticketsModels);
+        }
+
 
         public IActionResult Index()
         {

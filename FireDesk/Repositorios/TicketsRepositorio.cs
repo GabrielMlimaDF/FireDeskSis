@@ -24,5 +24,16 @@ namespace FireDesk.Repositorios
                 return (List<TicketsModel>)tickets;
             }
         }
+       
+
+        public async Task<List<TicketsModel>> GetId(int id)
+        {
+            await using (var connection = new SqlConnection(_configuration.GetConnectionString("FireDesk")))
+            {
+                const string sql = "SELECT * FROM Tickets WHERE TicketId = @TicketID";
+                var tickets = await connection.QueryAsync<TicketsModel>(sql, new { TicketId = id });
+                return (List<TicketsModel>)tickets;
+            }
+        }
     }
 }
