@@ -18,12 +18,7 @@ namespace FireDesk.Controllers
             _ticketsRepositorio = ticketsRepositorio;
         }
         [HttpGet]
-        public async Task<IActionResult> GetAll()
-
-        {
-            List<TicketsModel> ticketsModels = await _ticketsRepositorio.GetAll();
-            return Ok(ticketsModels);
-        }
+        
         public async Task<IActionResult> GetId(int id)
 
         {
@@ -32,8 +27,10 @@ namespace FireDesk.Controllers
         }
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            List<TicketsModel> ticketsModels = await _ticketsRepositorio.GetAll();
+            ViewBag.AllTickets = ticketsModels.Count();
             return View();
         }
 
