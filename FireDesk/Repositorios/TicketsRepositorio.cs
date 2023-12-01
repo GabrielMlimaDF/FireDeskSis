@@ -14,6 +14,10 @@ namespace FireDesk.Repositorios
             _configuration = config;
         }
 
+        public Task<TicketsModel> CreateTickets(TicketsModel model)
+        {
+            throw new NotImplementedException();
+        }
 
         public async Task<List<TicketsModel>> GetAll()
         {
@@ -24,16 +28,25 @@ namespace FireDesk.Repositorios
                 return (List<TicketsModel>)tickets;
             }
         }
-       
 
-        public async Task<List<TicketsModel>> GetId(int id)
+        public async Task<TicketsModel> GetId(int id)
         {
             await using (var connection = new SqlConnection(_configuration.GetConnectionString("FireDesk")))
             {
                 const string sql = "SELECT * FROM Tickets WHERE TicketId = @TicketID";
-                var tickets = await connection.QueryAsync<TicketsModel>(sql, new { TicketId = id });
-                return (List<TicketsModel>)tickets;
+                var tickets = await connection.QueryFirstAsync<TicketsModel>(sql, new { TicketId = id });
+                return tickets;
             }
+        }
+
+        public Task<TicketsModel> UpdateTickets(TicketsModel model, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TicketsModel> DeleteTickets(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

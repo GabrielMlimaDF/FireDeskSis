@@ -13,19 +13,19 @@ namespace FireDesk.Controllers
     public class HomeController : Controller
     {
         private readonly ITicketsRepositorio _ticketsRepositorio;
+
         public HomeController(ITicketsRepositorio ticketsRepositorio)
         {
             _ticketsRepositorio = ticketsRepositorio;
         }
+
         [HttpGet]
-        
         public async Task<IActionResult> GetId(int id)
 
         {
-            List<TicketsModel> ticketsModels = await _ticketsRepositorio.GetId(id);
+            TicketsModel ticketsModels = await _ticketsRepositorio.GetId(id);
             return Ok(ticketsModels);
         }
-
 
         public async Task<IActionResult> Index()
         {
