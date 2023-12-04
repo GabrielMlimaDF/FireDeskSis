@@ -7,7 +7,7 @@
         <span class="dashboard-01">Um resumo do dia </span>
         <p id="cd-01"><strong>Olá, Gabriel M***</strong></p>
         <p>@DateTime.Now.ToString("dd/MM/yyyy")</p>
-        <p><strong>(Total de chamados no sistema @ViewBag.AllTickets)</p>
+        <p><strong>(Total de chamados em operação no sistema @ViewBag.TicketsAtivos)</strong></p>
     </div>
 </div>
 <div class="container-painel">
@@ -15,23 +15,39 @@
         <h3 id="d-01">Todos os chamados em aberto</h3>
         <div class="div-left-painel">
             <div>
-            <h3>Chamados Abertos:</h3>
-            <h3>34 chamados abertos! </h3>
-                <div class="btn-chamados">
-                    <a class="btn-ch-aberto" asp-controller="" asp-action="">Ver Chamados   </a>
-                </div>
+                <h3>Chamados Abertos:</h3>
+                @if (ViewBag.TicketsAberto == 0)
+                {
+                    <h3>Nenhum chamado em aberto </h3>
+                }
+                else
+                {
+                    <h3>@ViewBag.TicketsAberto chamados no sistema </h3>
+                    <div class="btn-chamados">
+                        <a class="btn-ch-aberto" asp-controller="" asp-action="">Ver Chamados   </a>
+                    </div>
+                }
+
             </div>
-            
+
         </div>
     </div>
     <div class="painel">
         <h3 id="d-02">Todos os chamados em andamento</h3>
         <div class="div-right-painel">
             <h3>Chamados em andamento:</h3>
-            <h3>Você possue: <span>34</span> chamados em andamento! </h3>
-            <div class="btn-chamados">
-                <a class="btn-ch-aberto" asp-controller="" asp-action="">Em andamento </a>
-            </div>
+            @if (ViewBag.TicketsAndamento == 0)
+            {
+                <h3>Nenhum chamado em andamento </h3>
+            }
+            else
+            {
+                <h3>Você possue: <span>@ViewBag.TicketsAndamento</span> chamados em andamento! </h3>
+                <div class="btn-chamados">
+                    <a class="btn-ch-aberto" asp-controller="" asp-action="">Em andamento </a>
+                </div>
+            }
+           
         </div>
     </div>
 </div>

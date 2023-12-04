@@ -1,8 +1,9 @@
 ﻿using Dapper;
 using FireDesk.Models;
 using FireDesk.Repositorios.Interface;
+using Microsoft.AspNetCore.Http.HttpResults;
+using System.Data;
 using System.Data.SqlClient;
-
 namespace FireDesk.Repositorios
 {
     public class TicketsRepositorio : ITicketsRepositorio
@@ -21,16 +22,20 @@ namespace FireDesk.Repositorios
 
         public async Task<List<TicketsModel>> GetAll()
         {
-            await using (var connection = new SqlConnection(_configuration.GetConnectionString("FireDesk")))
-            {
-                const string sql = "SELECT * FROM Tickets";
-                var tickets = await connection.QueryAsync<TicketsModel>(sql);
-                return (List<TicketsModel>)tickets;
-            }
+           
+                await using (var connection = new SqlConnection(_configuration.GetConnectionString("FireDesk")))
+                {
+                    const string sql = "SELECT * FROM Tickets";
+                    var tickets = await connection.QueryAsync<TicketsModel>(sql);
+                    return (List<TicketsModel>)tickets;
+                }
+           
+           
         }
 
         public async Task<TicketsModel> GetId(int id)
         {
+            
             await using (var connection = new SqlConnection(_configuration.GetConnectionString("FireDesk")))
             {
                 const string sql = "SELECT * FROM Tickets WHERE TicketId = @TicketID";

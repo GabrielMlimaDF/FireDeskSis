@@ -13,6 +13,7 @@
 <body>
 
     @Html.Partial("_MenuSuperior")
+    @Html.Partial("_MenuSuspensoGestao")
        <div class="header">
         <main role="main">
              @RenderBody()
@@ -27,6 +28,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/menususpenso.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

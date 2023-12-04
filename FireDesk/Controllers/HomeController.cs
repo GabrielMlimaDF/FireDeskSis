@@ -25,19 +25,17 @@ namespace FireDesk.Controllers
         {
             TicketsModel ticketsModels = await _ticketsRepositorio.GetId(id);
             return Ok(ticketsModels);
+
         }
 
         public async Task<IActionResult> Index()
         {
             List<TicketsModel> ticketsModels = await _ticketsRepositorio.GetAll();
-            ViewBag.AllTickets = ticketsModels.Count();
+            ViewBag.TicketsAberto = ticketsModels.Where(x => x.Status == "Aberto").Count();
+            ViewBag.TicketsAndamento = ticketsModels.Where(x => x.Status == "Em andamento").Count();
+            ViewBag.TicketsAtivos = ViewBag.TicketsAberto + ViewBag.TicketsAndamento;
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }

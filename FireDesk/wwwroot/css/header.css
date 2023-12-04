@@ -1,7 +1,7 @@
 ﻿.header {
     max-width: 1200px;
     margin: 0px auto;
-    padding: 40px 20px;
+    padding: 25px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,3 +33,39 @@
         border-radius: 5px;
         display: block;
     }
+
+.menu-suspenso-gestao {
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    height: 150px;
+    background: #f5f5f5;
+    margin: 0px auto;
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition:3s ease-in;
+}
+
+.gestao-chamados {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.div-icons {
+    padding: 4px 4px;
+}
+
+.div-texto p {
+    max-width: 25ch;
+    line-height: 1.25rem;
+}
+
+.chamados-icons img {
+}
