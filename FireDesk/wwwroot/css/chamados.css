@@ -1,0 +1,52 @@
+﻿.items-display {
+    display: flex;
+    flex-direction: row;
+    max-width: 1450px;
+    gap: 15px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.display-menu {
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    color: #000000;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.display-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.input-pesquisar {
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    caret-color: #609;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 1.25rem;
+    height: 2rem;
+    line-height: 1.75rem;
+    outline: rgba(0, 0, 0, 0);
+    padding: 0.50rem 0.50rem;
+    width: 400px;
+    letter-spacing: 1px;
+}
+
+.btn-nvc {
+    background: #609;
+    color: #fff;
+    padding: 15px !important;
+}
+
+#termo::-webkit-input-placeholder {
+    color: #808080;
+    font-size: 15px;
+    font-family: Roboto;
+}

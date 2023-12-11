@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - FireDesk</title>
+    <link rel="icon" href="img/favicon.svg" type="svg+xml">
     <link href="~/css/site.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/FireDesk.styles.css" asp-append-version="true" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
 <body>
 
     @Html.Partial("_MenuSuperior")
-    @Html.Partial("_MenuSuspensoGestao")
+   
        <div class="header">
         <main role="main">
              @RenderBody()
@@ -21,7 +22,7 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
+        <div class="footer1">
             &copy; 2023 - FireDesk - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>

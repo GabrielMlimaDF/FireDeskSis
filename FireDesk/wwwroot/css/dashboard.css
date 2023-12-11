@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
+    position: relative;
 }
 p#cd-01{
     font-size:1.25rem;
