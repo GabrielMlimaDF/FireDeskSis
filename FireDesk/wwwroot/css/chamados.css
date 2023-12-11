@@ -29,7 +29,7 @@
     border-radius: 4px;
     caret-color: #609;
     color: #000;
-    font-family: sans-serif;
+    font-family: roboto;
     font-size: 1.25rem;
     height: 2rem;
     line-height: 1.75rem;
@@ -40,13 +40,23 @@
 }
 
 .btn-nvc {
+    display: flex;
+    align-items: center;
     background: #609;
     color: #fff;
     padding: 15px !important;
 }
 
-#termo::-webkit-input-placeholder {
-    color: #808080;
+    .btn-nvc::before {
+        content: "";
+        display: inline-block;
+        margin-right: 12px;
+        height: 24px;
+        width: 24px;
+        background-image: url(../img/Add1.svg);
+    }
+
+#termo::placeholder {
+    color: #8d8d8d;
     font-size: 15px;
-    font-family: Roboto;
 }
