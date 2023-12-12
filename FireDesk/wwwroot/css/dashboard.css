@@ -6,9 +6,11 @@
     align-items: start;
     position: relative;
 }
-p#cd-01{
-    font-size:1.25rem;
+
+p#cd-01 {
+    font-size: 1.25rem;
 }
+
 span#s-01 {
     font-size: 1.25rem;
 }
@@ -28,7 +30,7 @@ span#s-01 {
 
 .painel {
     margin-top: 3rem;
-    margin-bottom:3rem;
+    margin-bottom: 3rem;
     letter-spacing: .1rem;
 }
 
@@ -65,7 +67,7 @@ h3#d-02 {
 }
 
 .div-right-painel h3 {
-    color:#fff;
+    color: #fff;
 }
 
 .btn-chamados {
@@ -73,7 +75,6 @@ h3#d-02 {
 }
 
     .btn-chamados a {
-        border-radius: 5px;
         border: solid 1px;
         padding: 10px;
         text-transform: uppercase;
