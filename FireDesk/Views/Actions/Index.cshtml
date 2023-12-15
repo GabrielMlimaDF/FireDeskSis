@@ -1,8 +1,40 @@
 ﻿<h2 id="h01-chamados">Gerenciamento de Chamados</h2>
 <div class="items-display">
-    <input id="termo" type="text" class="input-pesquisar" placeholder="Digite um termo para a pesquisa" />
-            <a asp-area="" asp-controller="Actions" asp-action="Index" class="btn-nvc btn-geral" >Novo Chamado</a>
-    </div>
-    <div class="container-forms">
+    <input id="termo" type="text" class="input-geral input-pesquisa" placeholder="Digite um termo para a pesquisa" />
+    <a onclick="mostrarModal()" class="btn-nvc btn-geral">Novo Chamado</a>
+</div>
+<div id="modalOverlay" class="modal-overlay"></div>
 
+<div id="modal" class="container-forms">
+    <div class="top-title">
+        <h2>Abertura de chamado</h2>
+        <span onclick="fecharModal()"><img src="~/img/closeX.svg" /></span>
     </div>
+    <div class="alert-box alert-box-info">
+        <p>Ao cadastrar um novo chamado, a sincronização será automática e a lista será atualizada em tempo real para o técnico.</p><br>
+    </div>
+    <div class="form-chamados">
+        <form>
+            <label for="Assunto">Assunto:</label>
+            <input type="text" class="input-geral input-chamados" id="Assunto" name="Assunto" maxlength="255">
+            <label for="Tecnico">Técnico:</label>
+            <input type="text" class="input-geral input-chamados" id="Tecnico" name="Tecnico" maxlength="100">
+            <label for="UsuarioAbertura">Usuário de Abertura:</label>
+            <input type="text" class="input-geral input-chamados" id="UsuarioAbertura" name="UsuarioAbertura" maxlength="100">
+            <label for="DataAbertura">Data de Abertura:</label>
+            <input type="date" class="input-geral input-chamados" id="DataAbertura" name="DataAbertura">
+            <label for="Prioridade">Prioridade:</label>
+            <input type="text" class="input-geral input-chamados" id="Prioridade" name="Prioridade" maxlength="100">
+            <label for="Descricao">Descrição:</label>
+            <textarea class="textarea-chamados input-chamados" id="Descricao" name="Descricao" maxlength="1200"></textarea>
+            <div class="container-btn">
+                <a  class="btn-nvc btn-geral">Salvar</a>
+                <a  class="btn-cancelar btn-nvc btn-geral">Cancelar</a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+<script src="~/js/actions/formchamados.js"></script>

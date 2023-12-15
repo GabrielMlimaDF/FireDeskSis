@@ -25,6 +25,7 @@ img {
 a {
     text-decoration: none !important;
     color: #000000;
+    cursor: pointer !important;
 }
 
 .footer1 {
@@ -37,4 +38,25 @@ a {
     border: solid 1px;
     padding: 10px;
     text-transform: uppercase;
+}
+
+.input-geral {
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    caret-color: #609;
+    color: #000;
+    font-family: roboto;
+    font-size: 1rem;
+    height: 2rem;
+    line-height: 1.75rem;
+    outline: rgba(0, 0, 0, 0);
+    padding: 0.50rem 0.50rem;
+    letter-spacing: 1px;
+    margin:8px 0px 8px 0px;
+}
+label{
+    
+    display:block;
 }
