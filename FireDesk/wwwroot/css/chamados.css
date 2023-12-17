@@ -160,3 +160,11 @@
     margin-top:10px;
     gap:10px;
 }
+select {
+        width: 40%;
+    height:3rem !important;
+}
+    select:focus {
+        border: 1px solid #609;
+    }
+

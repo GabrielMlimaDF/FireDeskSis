@@ -35,7 +35,6 @@ a {
 }
 
 .btn-geral {
-    border: solid 1px;
     padding: 10px;
     text-transform: uppercase;
 }
@@ -54,9 +53,9 @@ a {
     outline: rgba(0, 0, 0, 0);
     padding: 0.50rem 0.50rem;
     letter-spacing: 1px;
-    margin:8px 0px 8px 0px;
+    margin: 8px 0px 8px 0px;
 }
-label{
-    
-    display:block;
+
+label {
+    display: block;
 }

@@ -25,7 +25,7 @@ namespace FireDesk.Repositorios
            
                 await using (var connection = new SqlConnection(_configuration.GetConnectionString("FireDesk")))
                 {
-                    const string sql = "SELECT * FROM Tickets";
+                    const string sql = "SELECT * FROM Ticket";
                     var tickets = await connection.QueryAsync<TicketsModel>(sql);
                     return (List<TicketsModel>)tickets;
                 }
@@ -38,7 +38,7 @@ namespace FireDesk.Repositorios
             
             await using (var connection = new SqlConnection(_configuration.GetConnectionString("FireDesk")))
             {
-                const string sql = "SELECT * FROM Tickets WHERE TicketId = @TicketID";
+                const string sql = "SELECT * FROM Ticket WHERE TicketId = @TicketID";
                 var tickets = await connection.QueryFirstAsync<TicketsModel>(sql, new { TicketId = id });
                 return tickets;
             }
