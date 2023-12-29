@@ -17,13 +17,40 @@
         <form>
             <label for="Assunto">Assunto:</label>
             <input type="text" class="input-geral input-chamados" id="Assunto" name="Assunto" maxlength="255">
-            <label for="Tecnico">Técnico:</label>
-            <select id="Tecnico" name="Tecnico" class="input-geral">
-                @foreach(var items in ViewBag.NomeTecnico)
-                {
-                    <option value="@items.TecnicoID">@items.NomeTecnico</option>
-                }                            
-            </select>
+            @*  <label for="Tecnico">Técnico:</label> *@
+
+            <div class="select2">
+                <div id="category-select">
+                    <label for="options-view-button">Técnicos</label>
+                    <input type="checkbox" id="options-view-button" />
+
+                    <div id="select-button">
+                        <div id="selected-value">Selecione o técnico</div>
+
+                        <div id="chevrons">
+                            <i data-lucide="chevron-down"></i>
+                            <i data-lucide="chevron-up"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="select2">
+                <div id="category-select">
+                </div>
+                <ul id="options">
+                    @foreach (var items in ViewBag.Tecnicos)
+                    {
+                        <li class="option">
+                            <input type="radio" id="Tecnico" name="Tecnico" value="@items.TecnicoID" data-label="Padaria" />
+                            <i data-lucide="sandwich"></i>
+                            <span class="label">@items.NomeTecnico</span>
+                            <i data-lucide="check"></i>
+                        </li>
+
+                    }
+                </ul>
+            </div>
+
             <label for="UsuarioAbertura">Usuário de Abertura:</label>
             <input type="text" class="input-geral input-chamados" id="UsuarioAbertura" name="UsuarioAbertura" maxlength="100">
             <label for="DataAbertura">Data de Abertura:</label>
@@ -43,5 +70,12 @@
     </div>
 
 </div>
+@section Scripts {
+    <script src="~/js/actions/formchamados.js"></script>
+    <script src="~/js/site.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 
-<script src="~/js/actions/formchamados.js"></script>
+}
