@@ -33,22 +33,20 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="select2">
-                <div id="category-select">
-                </div>
+
+               <div id="options-list">
                 <ul id="options">
                     @foreach (var items in ViewBag.Tecnicos)
                     {
                         <li class="option">
-                            <input type="radio" id="Tecnico" name="Tecnico" value="@items.TecnicoID" data-label="Padaria" />
-                            <i data-lucide="sandwich"></i>
+                            <input type="radio" name="Tecnico" value="@items.TecnicoID" data-label="@items.NomeTecnico" />
                             <span class="label">@items.NomeTecnico</span>
                             <i data-lucide="check"></i>
                         </li>
-
                     }
                 </ul>
+                </div>
+                
             </div>
 
             <label for="UsuarioAbertura">Usuário de Abertura:</label>

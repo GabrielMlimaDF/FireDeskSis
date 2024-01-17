@@ -235,7 +235,8 @@ select {
     margin-top: .30rem !important;
     border-radius: .375rem;
     border: 1px solid #609;
-    width: 40%;
+    width: 150%;
+    background:#fff;
 }
 
 .option {
@@ -244,7 +245,7 @@ select {
     gap: .5rem;
     padding: .75rem;
     border-bottom: 1px solid #609;
-    position:relative;
+    position: relative;
 }
 
     .option label {
@@ -274,9 +275,22 @@ select {
     .option:has(input:checked) [data-lucide="check"] {
         display: block;
     }
-    .option input[type="radio"]{
+
+    .option input[type="radio"] {
         all: unset;
+        position: absolute;
+        inset: 0;
+        cursor: pointer;
+    }
+
+    #options-list{
         position:absolute;
-        inset:0;
-        cursor:pointer;
-            }
+        z-index:4;
+    }
+#options-list {
+    display: none;
+}
+
+#category-select:has(#options-view-button:checked) + #options-list {
+    display: block;
+}
